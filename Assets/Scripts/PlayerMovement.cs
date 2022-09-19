@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         yThrow = Input.GetAxis("Vertical");
 
         float xoffset = xThrow * Time.deltaTime * controlSpeed;
-        float rawXPos = transform.localPosition.x + xThrow;
+        float rawXPos = transform.localPosition.x + xoffset;
         float clampXPos = Mathf.Clamp(rawXPos, -xrange, xrange);
 
         float yoffset = yThrow * Time.deltaTime * controlSpeed;
