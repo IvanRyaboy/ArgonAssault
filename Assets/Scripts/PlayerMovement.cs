@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float controlSpeed;
     [SerializeField] float xrange = 5f;
     [SerializeField] float yrange = 5f;
+
+    [SerializeField] GameObject[] lasers;
 
     [SerializeField] float positionPitchFactor = -2f;
     [SerializeField] float controlPitchFactor = -10f;
@@ -19,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
 
     public void ProcessRotation()
@@ -46,6 +50,34 @@ public class PlayerMovement : MonoBehaviour
         float clampYPos = Mathf.Clamp(rawYPos, -yrange, yrange);
 
         transform.localPosition = new Vector3(clampXPos, clampYPos, transform.localPosition.z);
+    }
+
+    void ProcessFiring()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            ActivateLasers();
+        }
+        else
+        {
+            DeactivateLasers();
+        }
+    }
+
+    private void DeactivateLasers()
+    {
+        foreach(GameObject laser in lasers)
+        {
+            laser.SetActive(false);
+        }
+    }
+
+    private void ActivateLasers()
+    {
+        foreach(GameObject laser in lasers)
+        {
+            laser.SetActive(true);
+        }
     }
 }
 
