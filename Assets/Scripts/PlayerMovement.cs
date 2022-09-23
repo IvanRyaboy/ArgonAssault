@@ -5,15 +5,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Moving variables")]
+    [Tooltip("How fast player ship can moving")]
     [SerializeField] float controlSpeed;
+    [Tooltip("How far player ship can moving horizontally")]
     [SerializeField] float xrange = 5f;
+    [Tooltip("How far player ship can moving virtically")]
     [SerializeField] float yrange = 5f;
 
+    [Tooltip("Array to work with lasers")]
     [SerializeField] GameObject[] lasers;
 
+    [Header("Screen position based tuning")]
+    [Tooltip("")]
     [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float controlPitchFactor = -10f;
     [SerializeField] float positionYawFactor = 2f;
+    [Header("Player input based tuning")]
+    [SerializeField] float controlPitchFactor = -10f;
     [SerializeField] float controlRollFactor = -20f;
 
     float yThrow, xThrow;
@@ -56,27 +64,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            ActivateLasers();
+            SetActiveLasers(true);
         }
         else
         {
-            DeactivateLasers();
+            SetActiveLasers(false);
         }
     }
 
-    private void DeactivateLasers()
+    private void SetActiveLasers(bool active)
     {
         foreach(GameObject laser in lasers)
         {
-            laser.SetActive(false);
-        }
-    }
-
-    private void ActivateLasers()
-    {
-        foreach(GameObject laser in lasers)
-        {
-            laser.SetActive(true);
+            var emissionController = laser.GetComponent<ParticleSystem>().emission;
+            emissionController.enabled = active;
         }
     }
 }
