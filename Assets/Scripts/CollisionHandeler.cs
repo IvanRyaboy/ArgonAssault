@@ -8,6 +8,7 @@ public class CollisionHandeler : MonoBehaviour
     bool isTransition = false;
     [SerializeField] float TimeToDestroy = 0.5f;
     [SerializeField] ParticleSystem explosion;
+    [SerializeField] GameObject[] parts;
 
     void OnCollisionEnter(Collision other)
     {
@@ -32,7 +33,11 @@ public class CollisionHandeler : MonoBehaviour
         if (isTransition == false)
         {
             explosion.Play();
-            GetComponent<MeshRenderer>().enabled = false;
+            foreach (GameObject part in parts)
+            {
+                var PartMeshRenderer = part.GetComponent<MeshRenderer>();
+                PartMeshRenderer.enabled = false;
+            }
             GetComponent<BoxCollider>().enabled = false;
             isTransition = true;
         }
