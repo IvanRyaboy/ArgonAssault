@@ -349,7 +349,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 3200836327345539238, guid: eb1dd30593b14cc44bf8036a06ee5edc, type: 3}
   hitVFX: {fileID: 3200836327345539238, guid: 0420df5ecdc8cee48a475227dd8d48b7, type: 3}
-  parent: {fileID: 1212806827}
   scorePerHit: 15
   hitPoints: 4
 --- !u!1 &700453113 stripped
@@ -473,7 +472,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 3200836327345539238, guid: eb1dd30593b14cc44bf8036a06ee5edc, type: 3}
   hitVFX: {fileID: 3200836327345539238, guid: 0420df5ecdc8cee48a475227dd8d48b7, type: 3}
-  parent: {fileID: 1212806827}
   scorePerHit: 15
   hitPoints: 4
 --- !u!1 &1046924014 stripped
@@ -495,11 +493,6 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3855401045143526199, guid: e0a6a50953b534247939509a7fb4da63, type: 3}
   m_PrefabInstance: {fileID: 4396657557461580330}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1212806827 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2279090858639544740, guid: bf961e211fbe59641a3a3aadb3f1f5df, type: 3}
-  m_PrefabInstance: {fileID: 2279090859851196175}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1484327608
 GameObject:
@@ -750,6 +743,10 @@ PrefabInstance:
     - target: {fileID: 2279090858639544741, guid: bf961e211fbe59641a3a3aadb3f1f5df, type: 3}
       propertyPath: m_Name
       value: Runtime Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279090858639544741, guid: bf961e211fbe59641a3a3aadb3f1f5df, type: 3}
+      propertyPath: m_TagString
+      value: RuntimePosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf961e211fbe59641a3a3aadb3f1f5df, type: 3}
