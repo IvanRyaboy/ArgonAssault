@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5013065817283579677}
   - component: {fileID: 1395654106282291314}
+  - component: {fileID: 360628890062102453}
   m_Layer: 0
   m_Name: Diver
   m_TagString: Untagged
@@ -53,10 +54,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2aec187cbcc691459a2361b6ad6ffab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathVFX: {fileID: 3200836327345539238, guid: eb1dd30593b14cc44bf8036a06ee5edc, type: 3}
+  deathFX: {fileID: 3200836327345539238, guid: eb1dd30593b14cc44bf8036a06ee5edc, type: 3}
   hitVFX: {fileID: 3200836327345539238, guid: 0420df5ecdc8cee48a475227dd8d48b7, type: 3}
   scorePerHit: 15
   hitPoints: 2
+--- !u!65 &360628890062102453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015622688192057563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &783014321103352417
 PrefabInstance:
   m_ObjectHideFlags: 0
