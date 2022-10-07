@@ -39,7 +39,6 @@ public class Enemy : MonoBehaviour
         GameObject vfx = Instantiate(hitVFX, transform.position, Quaternion.identity);
         vfx.transform.parent = parentGameObject.transform;
         hitPoints--;
-        scoreCounter.CountScore(scorePerHit);
     }
 
     private void KillEnemy()
@@ -47,5 +46,6 @@ public class Enemy : MonoBehaviour
         GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
         vfx.transform.parent = parentGameObject.transform;
         Destroy(this.gameObject);
+        scoreCounter.CountScore(scorePerHit);
     }
 }
